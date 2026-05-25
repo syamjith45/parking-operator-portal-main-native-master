@@ -122,7 +122,7 @@ In the Metro terminal, press `w`. Some native features will not work in the brow
 |---------|---------|---------|
 | `@react-navigation/native` | ^6.1.17 | Core navigation library |
 | `@react-navigation/stack` | ^6.3.29 | Stack navigator (Login → Main, modal screens) |
-| `@react-navigation/bottom-tabs` | ^6.5.20 | Bottom tab navigator (Operator & Admin tabs) |
+| `@react-navigation/bottom-tabs` | ^6.5.20 | Bottom tab navigator (tab-based UI for main screens) |
 | `react-native-screens` | ~4.3.0 | Native screen components (required by React Navigation) |
 | `react-native-safe-area-context` | 4.12.0 | Safe area insets for notches/home indicators |
 | `react-native-gesture-handler` | ~2.20.2 | Native gesture recognition (required by stack navigator) |
@@ -190,9 +190,8 @@ parking-operator-portal-main-native/
     │   ├── AuthContext.jsx          # Auth state, login/logout, staff profile
     │   └── ThemeContext.jsx         # Dark/light theme toggle
     ├── navigation/
-    │   ├── AppNavigator.jsx         # Root navigator (Login / Operator / Admin)
-    │   ├── OperatorTabNavigator.jsx # Bottom tabs for operators/managers
-    │   └── AdminTabNavigator.jsx    # Bottom tabs for admin
+    │   ├── AppNavigator.jsx         # Root navigator (Login / Operator screens)
+    │   └── OperatorTabNavigator.jsx # Bottom tabs for operators/managers
     ├── components/
     │   ├── ui/
     │   │   ├── Button.jsx           # Reusable button (variants: default, outline, destructive…)
@@ -212,18 +211,16 @@ parking-operator-portal-main-native/
     └── screens/
         ├── auth/
         │   └── LoginScreen.jsx      # Email + password login
-        ├── operator/
-        │   ├── MonitorScreen.jsx    # Live active vehicle monitor (polls every 30s)
-        │   ├── AddEntryScreen.jsx   # Log new vehicle entry
-        │   ├── HistoryScreen.jsx    # Transaction history with filters + pagination
-        │   ├── StatsScreen.jsx      # Revenue & session statistics
-        │   ├── ProfileScreen.jsx    # User profile, theme toggle, logout
-        │   ├── PricingScreen.jsx    # Manage overstay slabs (manager only)
-        │   └── SettingsScreen.jsx   # Configure hourly pricing rules (manager only)
-        └── admin/
-            ├── AdminDashboardScreen.jsx   # Global revenue & session stats
-            ├── OrganizationsScreen.jsx    # Manage organizations
-            └── SpacesScreen.jsx           # Manage parking spaces
+        └── operator/
+            ├── MonitorScreen.jsx    # Live active vehicle monitor (polls every 30s)
+            ├── AddEntryScreen.jsx   # Log new vehicle entry
+            ├── HistoryScreen.jsx    # Transaction history with filters + pagination
+            ├── StatsScreen.jsx      # Revenue & session statistics
+            ├── ProfileScreen.jsx    # User profile, theme toggle, logout
+            ├── PricingScreen.jsx    # Manage overstay slabs (manager only)
+            ├── SettingsScreen.jsx   # Configure hourly pricing rules (manager only)
+            ├── PrinterSettingsScreen.jsx  # Bluetooth printer setup
+            └── [other modal screens]
 ```
 
 ---
@@ -234,9 +231,10 @@ parking-operator-portal-main-native/
 |------|--------|
 | `operator` | Monitor, Add Entry, History, Stats, Profile |
 | `manager` | All operator screens + Pricing Management + Settings |
-| `admin` | Admin Dashboard, Organizations, Spaces |
 
-Login with Supabase credentials. The app automatically routes to the correct tab navigator based on the role returned from the GraphQL `myProfile` query.
+**Note:** Admin access is not available in the mobile app. Admin users should use the web portal for administrative tasks (organization & space management). The mobile app is designed exclusively for Operators and Managers who manage day-to-day parking operations.
+
+Login with Supabase credentials. The app automatically routes to the correct screens based on the role returned from the GraphQL `myProfile` query.
 
 ---
 

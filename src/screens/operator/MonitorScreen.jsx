@@ -113,7 +113,7 @@ const VehicleCard = ({ vehicle, onExit, baseHours, isDark }) => {
               {vehicle.vehicle_number || 'NO PLATE'}
             </Text>
             <View style={styles.metaRow}>
-              <Text style={[styles.metaText, { color: textMuted }]}>{vehicle.driver_phone}</Text>
+              <Text style={[styles.metaText, { color: textMuted }]}>{vehicle.driver_phone || 'N/A'}</Text>
               <View style={[styles.metaDot, { backgroundColor: textMuted }]} />
               <Text style={[styles.metaText, { color: textMuted }]}>In: {formatTime(vehicle.entry_time)}</Text>
             </View>
@@ -207,7 +207,7 @@ export default function MonitorScreen() {
     return data.activeVehicles
       .filter(
         (v) =>
-          v.driver_phone.includes(search) ||
+          (v.driver_phone || '').includes(search) ||
           (v.vehicle_number && v.vehicle_number.includes(upper))
       )
       .sort((a, b) => new Date(a.entry_time) - new Date(b.entry_time));

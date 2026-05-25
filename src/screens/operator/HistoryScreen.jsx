@@ -116,7 +116,7 @@ const TransactionRow = ({ tx, isDark }) => {
             +{(tx.overstay_minutes / 60).toFixed(1)}h overstay
           </Text>
         )}
-        <Text style={[styles.txPhone, { color: textMuted }]}>{tx.driver_phone}</Text>
+        <Text style={[styles.txPhone, { color: textMuted }]}>{tx.driver_phone || 'N/A'}</Text>
       </View>
     </View>
   );

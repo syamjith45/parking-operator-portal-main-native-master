@@ -62,7 +62,7 @@ export const ExitModal = ({ isOpen, onClose, onConfirm, vehicle, exitData, organ
             <Text style={[styles.plate, { color: textPrimary }]}>
               {vehicle.vehicle_number || 'NO PLATE'}
             </Text>
-            <Text style={[styles.phone, { color: textMuted }]}>Ph: {vehicle.driver_phone}</Text>
+            <Text style={[styles.phone, { color: textMuted }]}>Ph: {vehicle.driver_phone || 'N/A'}</Text>
           </View>
           <View style={styles.headerRight}>
             <TouchableOpacity
