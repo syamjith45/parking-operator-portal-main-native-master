@@ -1,0 +1,75 @@
+# ============================================================
+# Parking Operator Portal - React Native (Expo)
+# Node.js / npm dependency list
+# ============================================================
+# This is a JavaScript/React Native project.
+# All packages are managed via npm (package.json).
+# Install everything with:   npm install --legacy-peer-deps
+# ============================================================
+
+# ---------------------------
+# Runtime (Node.js / tooling)
+# ---------------------------
+node >= 18.0.0
+npm >= 9.0.0
+
+# ---------------------------
+# Runtime Environment
+# ---------------------------
+expo                                    ~52.0.0
+react                                   18.3.1
+react-native                            0.76.3
+
+# ---------------------------
+# Expo SDK Modules
+# ---------------------------
+expo-status-bar                         ~2.0.0
+expo-secure-store                       ~13.0.0
+expo-print                              ^55.0.15
+expo-sharing                            ^55.0.19
+@expo/vector-icons                      ^14.0.0
+
+# ---------------------------
+# Navigation
+# ---------------------------
+@react-navigation/native                ^6.1.17
+@react-navigation/stack                 ^6.3.29
+@react-navigation/bottom-tabs          ^6.5.20
+react-native-screens                    ~4.3.0
+react-native-safe-area-context          4.12.0
+react-native-gesture-handler            ~2.20.2
+
+# ---------------------------
+# GraphQL / Apollo
+# ---------------------------
+@apollo/client                          ^3.8.8
+graphql                                 ^16.8.1
+
+# ---------------------------
+# Supabase / Auth
+# ---------------------------
+@supabase/supabase-js                   ^2.39.0
+react-native-url-polyfill               ^2.0.0
+
+# ---------------------------
+# Storage
+# ---------------------------
+@react-native-async-storage/async-storage  1.21.0
+
+# ---------------------------
+# UI
+# ---------------------------
+@react-native-picker/picker             2.6.1
+
+# ---------------------------
+# Dev Dependencies
+# ---------------------------
+@babel/core                             ^7.24.0
+@types/react                            ~18.3.12
+
+# ---------------------------
+# Mobile Runtime (not npm)
+# ---------------------------
+# Android: Android SDK / Android Studio (API Level 34+)
+# iOS:     Xcode 15+ with iOS Simulator  (macOS only)
+# Device:  Expo Go app (iOS App Store / Google Play)

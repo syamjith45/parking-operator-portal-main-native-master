@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "Parking Operator Portal",
+    "slug": "parking-operator-portal-main-native",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "newArchEnabled": false,
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#fafaf9"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.keraai.parkingportal"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#fafaf9"
+      },
+      "package": "com.keraai.parkingportal",
+      "permissions": [
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.BLUETOOTH_SCAN",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-secure-store"
+      ],
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "e2f0c9c0-3c02-4fdc-876b-e8a795101800"
+      }
+    },
+    "owner": "syamjith45"
+  }
+}
